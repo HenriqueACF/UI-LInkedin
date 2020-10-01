@@ -27,7 +27,7 @@ export const Container = styled.div`
     }
     .left-column,
     .right-column,
-    ..ad-banner{
+    .ad-banner{
       display:unset;
     }
     .middle-column{
