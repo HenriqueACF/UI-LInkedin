@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState, useEffect } from 'react';
 //components
 import MobileHeader from '../MobileHeader';
 import DesktopHeader from '../DesktopHeader';
@@ -10,6 +10,14 @@ import AdBanner from '../AdBanner';
 import { Container } from './styles';
 
 const Layout: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      //setIsLoading(false);
+    }, 1000);
+  },[])
+
   return (
     <Container>
       <MobileHeader />
@@ -20,9 +28,9 @@ const Layout: React.FC = () => {
       </span>
 
       <main>
-        <LeftColumn />
-        <MiddleColum />
-        <RightColumn />
+        <LeftColumn isLoading={isLoading}/>
+        <MiddleColum  isLoading={isLoading}/>
+        <RightColumn isLoading={isLoading}/>
       </main>
     </Container>
   );
